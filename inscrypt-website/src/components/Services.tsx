@@ -25,7 +25,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-gray-100 py-12 sm:py-16 lg:py-20">
+    <div className=" font-sans bg-gray-100 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Services</h2>
@@ -56,7 +56,7 @@ export default function Services() {
         <div className="mt-12 text-center">
           <a
             href="/contact"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+            className="inline-flex font-sans items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
           >
             Get Started
           </a>

@@ -3,20 +3,20 @@ import { Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800">
+    <footer className="bg-black font-sans">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
             <h1 className="text-white text-3xl font-bold">Inscrypt</h1>
-            <p className="text-gray-300 text-base">
+            <p className="text-white text-base">
               Building digital experiences that matter.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-300">
+              <a href="#" className="text-white hover:tracking-wider">
                 <span className="sr-only">Instagram</span>
                 <Instagram className="h-6 w-6" aria-hidden="true" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300">
+              <a href="#" className="text-white hover:tracking-wider">
                 <span className="sr-only">WhatsApp</span>
                 
               </a>
@@ -28,12 +28,12 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">About Us</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   <li>
-                    <Link href="/services" className="text-base text-gray-300 hover:text-white">
+                    <Link href="/services" className="text-base text-white hover:text-white">
                       Our Services
                     </Link>
                   </li>
                   <li>
-                    <Link href="/portfolio" className="text-base text-gray-300 hover:text-white">
+                    <Link href="/portfolio" className="text-base text-white hover:text-white">
                       Portfolio
                     </Link>
                   </li>
@@ -43,12 +43,12 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Get in Touch</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   <li>
-                    <Link href="/contact" className="text-base text-gray-300 hover:text-white">
+                    <Link href="/contact" className="text-base text-white hover:text-white">
                       Send a message
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="text-base text-gray-300 hover:text-white">
+                    <Link href="/contact" className="text-base text-white hover:text-white">
                       Give us a call
                     </Link>
                   </li>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8">
-          <p className="text-base text-gray-400 xl:text-center">
+          <p className="text-base text-white xl:text-center">
             &copy; 2024 The Platform Digital Network Ltd. All rights reserved.
           </p>
         </div>
