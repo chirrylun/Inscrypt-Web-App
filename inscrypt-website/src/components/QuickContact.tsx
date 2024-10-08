@@ -39,7 +39,7 @@ export default function QuickContact() {
       <div className="relative mx-auto max-w-7xl px-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Let's create something amazing together
+            Let&apos;s create something amazing together
           </h2>
           <p className="mt-4 text-lg text-white">
             Reach out to us and start turning your vision into reality.
