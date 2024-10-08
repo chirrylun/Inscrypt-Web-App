@@ -1,8 +1,9 @@
 'use client'
+
+import { useEffect, useRef } from 'react';
 import { Monitor, Smartphone, PenTool, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useIntersectionObserver } from "../app/hooks/useIntersectionObscerver"
 
 const services = [
   {
@@ -40,15 +41,41 @@ const languages = [
 ];
 
 export default function Services() {
-  const { ref: servicesRef, inView: servicesInView } = useIntersectionObserver({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const seamlessRef = useRef<HTMLDivElement>(null);
 
-  const { ref: seamlessRef, inView: seamlessInView } = useIntersectionObserver({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    if (servicesRef.current) {
+      Array.from(servicesRef.current.children).forEach((child) => {
+        observer.observe(child);
+      });
+    }
+
+    if (seamlessRef.current) {
+      observer.observe(seamlessRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div className="font-sans bg-gray-100 py-12 sm:py-16 lg:py-20">
@@ -67,11 +94,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.name}
-              className={`bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-all duration-500 ease-in-out transform ${
-                servicesInView
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
+              className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-all duration-500 ease-in-out transform opacity-0 translate-y-10"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="p-6">
@@ -102,10 +125,8 @@ export default function Services() {
       </div>
 
       <div className="bg-gray-50">
-        <div ref={seamlessRef} className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
-          <div className={`lg:mt-0 transition-all duration-1000 ease-in-out transform ${
-            seamlessInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}>
+        <div ref={seamlessRef} className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8 opacity-0 translate-y-10 transition-all duration-1000 ease-in-out">
+          <div className="lg:mt-0">
             <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto lg:max-w-none">
               <p className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
                 Seamless experience
@@ -140,9 +161,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className={`mt-12 lg:mt-0 lg:ml-8 transition-all duration-1000 ease-in-out transform ${
-            seamlessInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`} style={{ transitionDelay: "200ms" }}>
+          <div className="mt-12 lg:mt-0 lg:ml-8">
             <div className="relative aspect-w-5 aspect-h-3 rounded-lg overflow-hidden sm:aspect-w-3 sm:aspect-h-2">
               <Image
                 src="/images/people-office-work-day.jpg"

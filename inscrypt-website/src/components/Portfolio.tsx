@@ -1,19 +1,18 @@
+'use client'
+
+import { useEffect, useRef } from 'react';
 import Image from 'next/image'
-import { useIntersectionObserver } from "../app/hooks/useIntersectionObscerver"
 
 interface PortfolioItemProps {
   name: string;
   category: string;
   image: string;
   index: number;
-  inView: boolean;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, index, inView }) => (
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, index }) => (
   <div 
-    className={`group transition-all duration-500 ease-in-out transform ${
-      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-    }`}
+    className="group opacity-0 translate-y-10 transition-all duration-500 ease-in-out transform"
     style={{ transitionDelay: `${index * 100}ms` }}
   >
     <div className="relative w-full h-64 rounded-lg overflow-hidden">
@@ -38,10 +37,36 @@ export default function Portfolio() {
     { name: 'Melula', category: 'Fashion & E-commerce', image: '/images/Screen2.jpg' },
   ]
 
-  const [portfolioRef, portfolioInView] = useIntersectionObserver({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
+  const portfolioRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    if (portfolioRef.current) {
+      Array.from(portfolioRef.current.children).forEach((child) => {
+        observer.observe(child);
+      });
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section className="bg-white font-sans py-16 sm:py-24">
@@ -57,7 +82,7 @@ export default function Portfolio() {
         </div>
         <div ref={portfolioRef} className="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {projects.map((project, index) => (
-            <PortfolioItem key={project.name} {...project} index={index} inView={portfolioInView} />
+            <PortfolioItem key={project.name} {...project} index={index} />
           ))}
         </div>
       </div>

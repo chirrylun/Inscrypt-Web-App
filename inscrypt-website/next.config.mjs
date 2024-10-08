@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: true,
+    webpack: (config) => {
+      config.resolve.extensions.push('.ts', '.tsx');
+      return config;
+    },
+    
+  };
+  
+  export default nextConfig;
