@@ -1,6 +1,8 @@
+'use client'
 import { Monitor, Smartphone, PenTool, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useIntersectionObserver } from "../app/hooks/useIntersectionObscerver"
 
 const services = [
   {
@@ -38,8 +40,18 @@ const languages = [
 ];
 
 export default function Services() {
+  const { ref: servicesRef, inView: servicesInView } = useIntersectionObserver({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const { ref: seamlessRef, inView: seamlessInView } = useIntersectionObserver({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
-    <div className=" font-sans bg-gray-100 py-12 sm:py-16 lg:py-20">
+    <div className="font-sans bg-gray-100 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -51,11 +63,16 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
+        <div ref={servicesRef} className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, index) => (
             <div
               key={service.name}
-              className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-shadow duration-300 ease-in-out"
+              className={`bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-all duration-500 ease-in-out transform ${
+                servicesInView
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="p-6">
                 <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mx-auto">
@@ -85,8 +102,10 @@ export default function Services() {
       </div>
 
       <div className="bg-gray-50">
-        <div className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
-          <div className="lg:mt-0">
+        <div ref={seamlessRef} className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+          <div className={`lg:mt-0 transition-all duration-1000 ease-in-out transform ${
+            seamlessInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}>
             <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto lg:max-w-none">
               <p className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
                 Seamless experience
@@ -108,7 +127,6 @@ export default function Services() {
                     height={50}
                     alt="Proficiency Icon"
                     key={lang.name}
-                    {...lang}
                   />
                 ))}
               </div>
@@ -122,7 +140,9 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="mt-12 lg:mt-0 lg:ml-8">
+          <div className={`mt-12 lg:mt-0 lg:ml-8 transition-all duration-1000 ease-in-out transform ${
+            seamlessInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`} style={{ transitionDelay: "200ms" }}>
             <div className="relative aspect-w-5 aspect-h-3 rounded-lg overflow-hidden sm:aspect-w-3 sm:aspect-h-2">
               <Image
                 src="/images/people-office-work-day.jpg"

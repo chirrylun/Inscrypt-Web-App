@@ -1,13 +1,21 @@
 import Image from 'next/image'
+import { useIntersectionObserver } from "../app/hooks/useIntersectionObscerver"
 
 interface PortfolioItemProps {
   name: string;
   category: string;
   image: string;
+  index: number;
+  inView: boolean;
 }
 
-const PortfolioItem : React.FC<PortfolioItemProps> = ({ name, category, image }) => (
-  <div className="group">
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, index, inView }) => (
+  <div 
+    className={`group transition-all duration-500 ease-in-out transform ${
+      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+    }`}
+    style={{ transitionDelay: `${index * 100}ms` }}
+  >
     <div className="relative w-full h-64 rounded-lg overflow-hidden">
       <Image
         src={image}
@@ -30,6 +38,11 @@ export default function Portfolio() {
     { name: 'Melula', category: 'Fashion & E-commerce', image: '/images/Screen2.jpg' },
   ]
 
+  const [portfolioRef, portfolioInView] = useIntersectionObserver({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <section className="bg-white font-sans py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
@@ -42,14 +55,12 @@ export default function Portfolio() {
             Check out some of our recent work that showcases our expertise and creativity.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {projects.map((project) => (
-            <PortfolioItem key={project.name} {...project} />
+        <div ref={portfolioRef} className="mt-12 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {projects.map((project, index) => (
+            <PortfolioItem key={project.name} {...project} index={index} inView={portfolioInView} />
           ))}
         </div>
       </div>
-
-      
     </section>
   )
 }
