@@ -40,7 +40,7 @@ const languages = [
 export default function Services() {
   return (
     <div className=" font-sans bg-gray-100 py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Our Services
@@ -85,7 +85,7 @@ export default function Services() {
       </div>
 
       <div className="bg-gray-50">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+        <div className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
           <div className="lg:mt-0">
             <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto lg:max-w-none">
               <p className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
@@ -100,7 +100,7 @@ export default function Services() {
                 your project receives expert attention from concept to launch.
               </p>
 
-              <div className="mt-4 grid grid-cols-5 md:grid-cols-5 md:gap-4 gap-0 lg:grid-cols-5">
+              <div className="mt-6 pr-8 grid grid-cols-5 md:grid-cols-5 md:gap-4 gap-0 lg:grid-cols-5">
                 {languages.map((lang) => (
                   <Image
                     src={lang.image}
