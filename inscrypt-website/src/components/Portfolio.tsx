@@ -1,7 +1,12 @@
 import Image from 'next/image'
 
+interface PortfolioItemProps {
+  name: string;
+  category: string;
+  image: string;
+}
 
-const PortfolioItem = ({ name, category, image }) => (
+const PortfolioItem : React.FC<PortfolioItemProps> = ({ name, category, image }) => (
   <div className="group">
     <div className="relative w-full h-64 rounded-lg overflow-hidden">
       <Image
