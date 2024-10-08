@@ -100,7 +100,7 @@ export default function Services() {
                 your project receives expert attention from concept to launch.
               </p>
 
-              <div className="mt-4 grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-4 gap-0 lg:grid-cols-5">
+              <div className="mt-4 grid grid-cols-5 md:grid-cols-5 md:gap-4 gap-0 lg:grid-cols-5">
                 {languages.map((lang) => (
                   <Image
                     src={lang.image}
