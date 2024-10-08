@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+
 const PortfolioItem = ({ name, category, image }) => (
   <div className="group">
     <div className="relative w-full h-64 rounded-lg overflow-hidden">
@@ -42,6 +43,8 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
+
+      
     </section>
   )
 }

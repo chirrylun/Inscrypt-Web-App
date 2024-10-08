@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <div className="relative font-sans">
+    <div className="mt-12 relative font-sans">
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
           <div className="absolute inset-0">
             <Image
               className="h-full w-full object-cover"
-              src="/images/hero-image.jpg"
+              src="/images/afro-american-woman-working-laptop.jpg"
               alt="People working on laptops"
               layout="fill"
             />

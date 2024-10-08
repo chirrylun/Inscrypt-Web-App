@@ -57,7 +57,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-gray-700 pt-8">
+        <div className="mt-12 border-t border-white pt-8">
           <p className="text-base text-white xl:text-center">
             &copy; 2024 The Platform Digital Network Ltd. All rights reserved.
           </p>
