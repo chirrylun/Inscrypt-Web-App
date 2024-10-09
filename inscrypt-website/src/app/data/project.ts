@@ -37,6 +37,15 @@ const projects: Project[] = [
         link: '#',
         color: 'bg-pink-500',
       },
+      {
+        id: 5,
+        title: 'Sweeftly',
+        category: 'E-commerce Startup',
+        image: '/images/Screen6.jpg',
+        description: 'A e-commerce startup connecting sellers and buyers.',
+        link: '#',
+        color: 'bg-pink-500',
+      },
     
   
 ];
