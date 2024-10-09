@@ -30,14 +30,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => (
       />
       <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
       <p className="text-gray-600 mb-4">{project.description}</p>
-      <a
+      {project.link === "#" ? (
+        <p className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300">Project in Beta</p>
+      ) : (
+        <a
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300"
       >
-        {project.link === "#" ? "Project in Beta" : "View Project"} <ExternalLink className="ml-2 h-4 w-4" />
+       View Project
+       <ExternalLink className="ml-2 h-4 w-4" />
       </a>
+      )} 
+      
     </motion.div>
   </motion.div>
 );
