@@ -4,8 +4,8 @@ import { Instagram } from 'lucide-react'
 export default function Footer() {
   // Replace these with your actual contact details
   const instagramUrl = "https://www.instagram.com/inscrypttech"
-  const whatsappNumber = "+248143653652" // Replace with your WhatsApp number
-  const phoneNumber = "+248143653652" // Replace with your phone number
+  const whatsappNumber = "+2348143653652" // Replace with your WhatsApp number
+  const phoneNumber = "+2348143653652" // Replace with your phone number
 
   return (
     <footer className="bg-black font-sans">
@@ -54,7 +54,7 @@ export default function Footer() {
                       Send a message
                     </Link>
                   </li>
-                  
+
                   <li>
                     <a href={`tel:${phoneNumber}`} className="text-base text-white hover:text-white">
                       Give us a call
