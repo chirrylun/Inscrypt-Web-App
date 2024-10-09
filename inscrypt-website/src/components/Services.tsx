@@ -116,7 +116,7 @@ export default function Services() {
 
         <div className="mt-12 text-center">
           <a
-            href="/contact"
+            href="/#quick-contact"
             className="inline-flex font-sans items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
           >
             Get Started
@@ -153,7 +153,7 @@ export default function Services() {
               </div>
               <div className="mt-6">
                 <Link
-                  href="/contact"
+                  href="/#quick-contact"
                   className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Start a project

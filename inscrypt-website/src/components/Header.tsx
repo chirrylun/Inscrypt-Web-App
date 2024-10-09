@@ -52,7 +52,7 @@ export default function Header() {
           <Link
                     href="/"
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
-                    onClick={toggleMenu}
+                    
                   >
                     <Home className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Home Icon */}
                     Home
@@ -60,7 +60,7 @@ export default function Header() {
                   <Link
                     href="/services"
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
-                    onClick={toggleMenu}
+                    
                   >
                     <Briefcase className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Services Icon */}
                     Our Services
@@ -68,7 +68,7 @@ export default function Header() {
                   <Link
                     href="/portfolio"
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
-                    onClick={toggleMenu}
+                 
                   >
                     <Briefcase className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Portfolio Icon */}
                     Portfolio
@@ -78,9 +78,9 @@ export default function Header() {
           <div className="hidden font-sans md:flex items-center justify-end md:flex-1 lg:w-0">
             
             <Link
-                    href="/contact"
+                    href="/#quick-contact"
                     className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                    onClick={toggleMenu}
+                   
                   >
                     <Phone className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Contact Icon */}
                     Contact us
@@ -148,7 +148,7 @@ export default function Header() {
                     Portfolio
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/#quick-contact"
                     className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     onClick={toggleMenu}
                   >

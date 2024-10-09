@@ -17,7 +17,7 @@ export default function QuickContact() {
   };
 
   return (
-    <section className="relative font-sans overflow-hidden 
+    <section id='quick-contact' className="relative font-sans overflow-hidden 
      py-16 sm:py-24">
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">

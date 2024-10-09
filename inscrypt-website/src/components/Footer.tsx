@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram } from 'lucide-react'
+import { Instagram, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -19,6 +19,7 @@ export default function Footer() {
               <a href="#" className="text-white hover:tracking-wider">
                 <span className="sr-only">WhatsApp</span>
                 
+                <MessageCircle className="h-6 w-6" aria-hidden="true" /> {/* WhatsApp icon added */}
               </a>
             </div>
           </div>
@@ -43,7 +44,7 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Get in Touch</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   <li>
-                    <Link href="/contact" className="text-base text-white hover:text-white">
+                    <Link href="/#quick-contact" className="text-base text-white hover:text-white">
                       Send a message
                     </Link>
                   </li>
