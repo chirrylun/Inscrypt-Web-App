@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react';
-import { FaDesktop, FaMobileAlt, FaPencilRuler, FaUsers } from 'react-icons/fa';
 import { IoIosDesktop } from "react-icons/io";
 import { CiMobile1 } from "react-icons/ci";
 import { BsPalette2 } from "react-icons/bs";
