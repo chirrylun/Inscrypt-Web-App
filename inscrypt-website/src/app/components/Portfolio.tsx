@@ -17,7 +17,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, in
     className="group opacity-0 translate-y-10 transition-all duration-500 ease-in-out transform"
     style={{ transitionDelay: `${index * 100}ms` }}
   >
-    <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
       <Image
         src={image}
         alt={name}
@@ -28,7 +28,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, in
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <h3 className="text-lg font-semibold text-white">{name}</h3>
-        <p className="text-sm text-white">{category}</p>
+        <p className="text-sm text-gray-200">{category}</p>
       </div>
     </div>
   </div>
@@ -70,9 +70,11 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white font-sans py-20 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/subtle-dots.png')] opacity-5"></div>
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-20"></div>
+    <section className="bg-gradient-to-br from-indigo-50 via-white to-pink-50 font-sans py-20 sm:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-indigo-100/50 bg-[size:20px_20px]" style={{ maskImage: 'radial-gradient(white, transparent)', WebkitMaskImage: 'radial-gradient(white, transparent)' }}></div>
+      <div className="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"></div>
+      <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-pink-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-yellow-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -94,7 +96,7 @@ export default function Portfolio() {
         <div className="mt-16 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 ease-in-out shadow-sm hover:shadow-md"
+            className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 ease-in-out shadow-md hover:shadow-lg"
           >
             View All Projects
             <CiCircleChevRight className="ml-2" size={24} />
