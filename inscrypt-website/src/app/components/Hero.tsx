@@ -75,7 +75,7 @@ export default function Hero() {
           {/* Decorative Elements */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 0.7 }}
             transition={{ duration: 1, delay: 0.5 }}
             className="absolute top-0 right-0 -mt-20 -mr-20 w-40 h-40 bg-indigo-500 rounded-full opacity-10"
           ></motion.div>
