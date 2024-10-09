@@ -81,7 +81,7 @@ export default function Hero() {
           ></motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 0.5 }}
             transition={{ duration: 1, delay: 0.7 }}
             className="absolute bottom-0 left-0 -mb-20 -ml-20 w-60 h-60 bg-purple-500 rounded-full opacity-10"
           ></motion.div>
