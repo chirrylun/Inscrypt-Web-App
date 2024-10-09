@@ -9,16 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-       
+        sans: ['var(--font-poppins)', 'sans-serif'],
       },
-      colors:{
-        white: "#FFFFFF",
-        gray: "#686868"
-      },
-      
-      
-      
     },
   },
   plugins: [],

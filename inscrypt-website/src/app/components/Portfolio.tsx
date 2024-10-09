@@ -14,7 +14,7 @@ interface PortfolioItemProps {
 
 const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, index }) => (
   <div 
-    className="group opacity-0 translate-y-10 transition-all duration-500 ease-in-out transform"
+    className="group opacity-0  translate-y-10 transition-all duration-500 ease-in-out transform"
     style={{ transitionDelay: `${index * 100}ms` }}
   >
     <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -27,8 +27,8 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ name, category, image, in
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-lg font-semibold text-white">{name}</h3>
-        <p className="text-sm text-white">{category}</p>
+        <h3 className="text-lg font-semibold font-sans text-white">{name}</h3>
+        <p className="text-sm text-white font-sans">{category}</p>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <section className="bg-gradient-to-br from-indigo-50 via-white to-pink-50 font-sans py-20 sm:py-32 relative overflow-hidden">
+    <section className="bg-gradient-to-br  from-indigo-50 via-white to-pink-50 font-sans py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-indigo-100/50 bg-[size:20px_20px]" style={{ maskImage: 'radial-gradient(white, transparent)', WebkitMaskImage: 'radial-gradient(white, transparent)' }}></div>
       <div className="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"></div>
       <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-pink-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>

@@ -2,9 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-html {
-  font-family: var(--font-poppins), sans-serif;
-}
 
 @keyframes fadeInUp {
   from {
@@ -23,4 +20,7 @@ html {
 
 .bg-gray-50 {
   background-color: #F9FAFB; /* This is the hex code for the gray-50 color in Tailwind CSS */
+}
+html, body {
+  font-family: var(--font-poppins), sans-serif;
 }

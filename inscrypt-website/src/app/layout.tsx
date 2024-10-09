@@ -7,7 +7,8 @@ const poppins = Poppins({
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
-})
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = {
   title: "Elevate your brand",
