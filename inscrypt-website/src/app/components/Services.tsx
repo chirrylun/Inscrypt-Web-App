@@ -3,6 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { FaDesktop, FaMobileAlt, FaPencilRuler, FaUsers, FaArrowRight } from 'react-icons/fa';
 import Image from "next/image";
+import { IoIosDesktop } from "react-icons/io"
+import { CiMobile1 } from "react-icons/ci"
+import { BsPalette2 } from "react-icons/bs"
+import { RiTeamFill } from "react-icons/ri"
 import Link from "next/link";
 import { CiCircleChevRight } from "react-icons/ci";
 
@@ -10,24 +14,24 @@ const services = [
   {
     name: "Website Design & Development",
     description: "We create stunning, responsive websites that captivate your audience and drive results.",
-    icon: FaDesktop,
+    icon: IoIosDesktop,
   },
   {
     name: "Mobile Application Development",
     description: "Extend your reach with custom mobile apps that engage users on the go.",
-    icon: FaMobileAlt,
+    icon: CiMobile1,
   },
   {
     name: "UX/UI Design & Research",
     description: "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
-    icon: FaPencilRuler,
+    icon: BsPalette2,
   },
   {
     name: "In-house Tech Team",
     description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
-    icon: FaUsers,
+    icon: RiTeamFill,
   },
-];
+]
 
 const languages = [
   { name: "Javascript", image: "/images/js_5968292.png" },
@@ -79,52 +83,40 @@ export default function Services() {
      
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-700 rounded-full opacity-10 transform translate-x-1/2 translate-y-1/2"></div>
       
-      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Our Services
+      <div className="py-20 bg-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-100 rounded-full opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-100 rounded-full opacity-30 translate-x-1/2 translate-y-1/2"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+            <span className="block">Our Services</span>
+            <span className="block text-indigo-600 mt-2">Elevating Your Digital Presence</span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            We specialize in crafting digital experiences that elevate your brand.
+          <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
+            We specialize in crafting digital experiences that transform your brand and drive growth.
           </p>
         </div>
-
-        <div ref={servicesRef} className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <div
-              key={service.name}
-              className="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-all duration-500 ease-in-out transform opacity-0 translate-y-10 hover:-translate-y-1"
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="p-6 relative">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-700 rounded-bl-full opacity-10"></div>
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white mb-4">
-                  <service.icon className="h-6 w-6" aria-hidden="true" />
+            <div key={index} className="fade-in opacity-0 translate-y-4 transition-all duration-500 ease-out" style={{ transitionDelay: `${index * 100}ms` }}>
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6 mx-auto">
+                  <service.icon className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  {service.name}
-                </h3>
-                <p className="text-base text-gray-500 mb-4">
-                  {service.description}
-                </p>
-                <a href="#" className="text-indigo-700 hover:text-indigo-800 font-medium flex items-center">
-                  Learn more <CiCircleChevRight className='ml-2' size={20}/>
-                </a>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 text-center">{service.name}</h3>
+                <p className="text-gray-600 text-center">{service.description}</p>
               </div>
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <a
-            href="/#quick-contact"
-            className="inline-flex font-sans items-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-700 hover:bg-indigo-800 transition duration-300 ease-in-out"
-          >
-            Get Started
-            <CiCircleChevRight className='ml-2' size={20}/>
-          </a>
+        <div className="text-center mt-16">
+          <Link href="/services" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 shadow-md hover:shadow-lg">
+            Explore Our Services
+            <CiCircleChevRight className="ml-2" size={24} />
+          </Link>
         </div>
       </div>
+    </div>
 
       <div className="bg-white mt-20">
         <div ref={seamlessRef} className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8 opacity-0 translate-y-10 transition-all duration-1000 ease-in-out relative">
