@@ -176,14 +176,25 @@ export default function Services() {
                 objectFit="cover"
                 className="rounded-xl"
               />
-              <div className="absolute rounded-lg inset-0 bg-gradient-to-tr from-indigo-600 to-pink-400 mix-blend-multiply opacity-20"></div>
-              <div className="absolute top-4 right-4 bg-white bg-opacity-90 p-4 rounded-lg shadow-lg">
-                <p className="font-sans font-bold text-4xl text-indigo-600">40+</p>
-                <p className="font-sans font-medium text-sm mt-1 text-gray-700">Projects</p>
-                <p className="font-sans font-medium text-sm text-gray-700">completed</p>
+              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600 to-pink-400 mix-blend-multiply opacity-20"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white text-lg font-semibold">Explore Our Work</span>
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-pink-100 rounded-full opacity-50"></div>
+            <div className="absolute top-4 right-4 bg-white bg-opacity-90 p-4 rounded-lg shadow-lg transform rotate-3 transition-transform duration-300 hover:rotate-0">
+              <p className="font-sans font-bold text-4xl text-indigo-600">40+</p>
+              <p className="font-sans font-medium text-sm mt-1 text-gray-700">Projects</p>
+              <p className="font-sans font-medium text-sm text-gray-700">completed</p>
+            </div>
+            <div className="absolute -left-4 top-1/2 transform -translate-y-1/2">
+              <div className="bg-white rounded-full p-2 shadow-lg">
+                <div className="bg-indigo-600 rounded-full p-2">
+                  <CiCircleChevRight className="text-white" size={32} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
