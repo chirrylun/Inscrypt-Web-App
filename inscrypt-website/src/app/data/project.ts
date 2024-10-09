@@ -43,7 +43,7 @@ const projects: Project[] = [
         category: 'E-commerce Startup',
         image: '/images/Screen6.jpg',
         description: 'A e-commerce startup connecting sellers and buyers.',
-        link: '#',
+        link: '/https://www.sweeftly.com',
         color: 'bg-pink-500',
       },
     
