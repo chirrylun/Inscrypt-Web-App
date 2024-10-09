@@ -8,6 +8,7 @@ import { CiMobile1 } from "react-icons/ci"
 import { BsPalette2 } from "react-icons/bs"
 import { RiTeamFill } from "react-icons/ri"
 import { CiCircleChevRight } from "react-icons/ci"
+import { SiGooglemarketingplatform } from "react-icons/si"
 
 const services = [
   {
@@ -30,6 +31,11 @@ const services = [
     description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
     icon: RiTeamFill,
   },
+  {
+    name: "Digital Marketing",
+    description: "Get your brand in front of your potential customers the right way with a dedicated team of experts.",
+    icon: SiGooglemarketingplatform,
+  }
 ]
 
 const languages = [
@@ -89,25 +95,27 @@ export default function Services() {
           </p>
         </div>
 
-        <div ref={servicesRef} className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div ref={servicesRef} className="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
           {services.map((service, index) => (
             <div
               key={service.name}
-              className="bg-white overflow-hidden shadow-xl rounded-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform opacity-0 translate-y-10 hover:-translate-y-1"
+              className={`bg-white overflow-hidden shadow-xl rounded-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform opacity-0 translate-y-10 hover:-translate-y-1 ${
+                index === 4 ? 'md:col-span-3 lg:col-span-1' : ''
+              }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="p-8 relative">
-                <div className="absolute top-0 right-0 w-20 h-20 bg-indigo-100 rounded-bl-full"></div>
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-6">
+              <div className="p-6 relative h-full flex flex-col">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-100 rounded-bl-full"></div>
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mb-4">
                   <service.icon className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {service.name}
                 </h3>
-                <p className="text-base text-gray-500 mb-4">
+                <p className="text-base text-gray-500 mb-4 flex-grow">
                   {service.description}
                 </p>
-                <Link href="#" className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center transition duration-300">
+                <Link href="#" className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center transition duration-300 mt-auto">
                   Learn more <CiCircleChevRight className='ml-2' size={24}/>
                 </Link>
               </div>
@@ -184,7 +192,7 @@ export default function Services() {
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-pink-100 rounded-full opacity-50"></div>
             <div className="absolute top-4 right-4 bg-white bg-opacity-90 p-4 rounded-lg shadow-lg transform rotate-3 transition-transform duration-300 hover:rotate-0">
-              <p className="font-sans font-bold text-4xl text-indigo-600">40+</p>
+              <p className="font-sans font-bold text-4xl text-indigo-600">25+</p>
               <p className="font-sans font-medium text-sm mt-1 text-gray-700">Projects</p>
               <p className="font-sans font-medium text-sm text-gray-700">completed</p>
             </div>

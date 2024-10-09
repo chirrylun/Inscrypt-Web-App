@@ -38,6 +38,13 @@ const services = [
     image: "/images/tech-team.jpg",
     color: "bg-red-500",
   },
+  {
+    name: "Digital Marketing",
+    description: "Get your brand in front of your potential customers the right way with a dedicated team of experts.",
+    icon: RiTeamFill,
+    image: "/images/tech-team.jpg",
+    color: "bg-red-500",
+  },
 ];
 
 const languages = [

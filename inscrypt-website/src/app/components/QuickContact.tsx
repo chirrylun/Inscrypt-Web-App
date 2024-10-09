@@ -1,24 +1,48 @@
 'use client'
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function QuickContact() {
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', { name, company, message });
-    // Reset form fields
-    setName('');
-    setCompany('');
-    setMessage('');
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const templateParams = {
+        from_name: name,
+        from_company: company,
+        message: message,
+      };
+
+      await emailjs.send(
+        'service_tbstyfj',
+        'template_bwo4428',
+        templateParams,
+        'S00Pro-Zh5p8m7jEU'
+      );
+
+      setSubmitMessage('Your message has been sent successfully! We will be in touch within 24 hours.');
+      // Reset form fields
+      setName('');
+      setCompany('');
+      setMessage('');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitMessage('An error occurred. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id='quick-contact' className="relative font-sans overflow-hidden 
-     py-16 sm:py-24">
+    <section id='quick-contact' className="relative font-sans overflow-hidden py-16 sm:py-24">
       {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
         <video
@@ -102,11 +126,15 @@ export default function QuickContact() {
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </div>
           </form>
+          {submitMessage && (
+            <p className="mt-4 text-lg text-white">{submitMessage}</p>
+          )}
         </div>
       </div>
     </section>
