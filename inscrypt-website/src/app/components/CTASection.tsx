@@ -10,7 +10,7 @@ export default function CTASection() {
             <span className="block">Start your project today.</span>
           </h2>
           <p className="mt-4 text-lg leading-6 text-indigo-200">
-            Our team of experts is ready to bring your vision to life. Let's create something amazing together.
+            Our team of experts is ready to bring your vision to life. Let&apos;s create something amazing together.
           </p>
           <a
             href="/#quick-contact"

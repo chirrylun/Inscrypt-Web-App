@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Footer from "../components/Footer";
-import QuickContact from "./QuickContact";
 import { Project } from "../types/Project";
 import projects from "../data/project";
 import ProjectCard from "../components/ProjectCard";
