@@ -35,6 +35,7 @@ export default function Portfolio() {
     { name: 'Munchies', category: 'Restaurant', image: '/images/Screen3.jpg' },
     { name: 'BlueRidge', category: 'Hotels & Resorts', image: '/images/Screen4.jpg' },
     { name: 'Melula', category: 'Fashion & E-commerce', image: '/images/Screen2.jpg' },
+    { name: 'Sweeftly', category: 'E-commerce Startup', image: '/images/Screen6.jpg' },
   ]
 
   const portfolioRef = useRef<HTMLDivElement>(null);
