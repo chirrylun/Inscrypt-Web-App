@@ -20,3 +20,7 @@ html {
 .animate-in {
   animation: fadeInUp 0.5s ease-out forwards;
 }
+
+.bg-gray-50 {
+  background-color: #F9FAFB; /* This is the hex code for the gray-50 color in Tailwind CSS */
+}

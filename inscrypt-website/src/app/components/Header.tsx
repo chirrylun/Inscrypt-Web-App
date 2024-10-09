@@ -1,7 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Home, Briefcase, Phone  } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { FaPhone } from "react-icons/fa";
+import { IoBook } from "react-icons/io5";
+import { GoHomeFill } from "react-icons/go";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,7 +58,7 @@ export default function Header() {
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     
                   >
-                    <Home className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Home Icon */}
+                    <GoHomeFill className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Home Icon */}
                     Home
                   </Link>
                   <Link
@@ -62,7 +66,7 @@ export default function Header() {
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     
                   >
-                    <Briefcase className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Services Icon */}
+                    <MdOutlineDesignServices className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Services Icon */}
                     Our Services
                   </Link>
                   <Link
@@ -70,7 +74,7 @@ export default function Header() {
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
                  
                   >
-                    <Briefcase className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Portfolio Icon */}
+                    <IoBook className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Portfolio Icon */}
                     Portfolio
                   </Link>
                   
@@ -82,7 +86,7 @@ export default function Header() {
                     className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                    
                   >
-                    <Phone className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Contact Icon */}
+                    <FaPhone className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Contact Icon */}
                     Contact us
                   </Link>
           </div>
@@ -128,7 +132,7 @@ export default function Header() {
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     onClick={toggleMenu}
                   >
-                    <Home className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Home Icon */}
+                    <GoHomeFill className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Home Icon */}
                     Home
                   </Link>
                   <Link
@@ -136,7 +140,7 @@ export default function Header() {
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     onClick={toggleMenu}
                   >
-                    <Briefcase className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Services Icon */}
+                    <MdOutlineDesignServices className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Services Icon */}
                     Our Services
                   </Link>
                   <Link
@@ -144,7 +148,7 @@ export default function Header() {
                     className="flex items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     onClick={toggleMenu}
                   >
-                    <Briefcase className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Portfolio Icon */}
+                    <IoBook className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Portfolio Icon */}
                     Portfolio
                   </Link>
                   <Link
@@ -152,7 +156,7 @@ export default function Header() {
                     className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     onClick={toggleMenu}
                   >
-                    <Phone className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Contact Icon */}
+                    <FaPhone className="mr-2 h-5 w-5" aria-hidden="true" /> {/* Contact Icon */}
                     Contact us
                   </Link>
                 </div>

@@ -1,34 +1,31 @@
 'use client'
 
 import { useEffect, useRef } from 'react';
-import { Monitor, Smartphone, PenTool, Users } from "lucide-react";
+import { FaDesktop, FaMobileAlt, FaPencilRuler, FaUsers, FaArrowRight } from 'react-icons/fa';
 import Image from "next/image";
 import Link from "next/link";
+import { CiCircleChevRight } from "react-icons/ci";
 
 const services = [
   {
     name: "Website Design & Development",
-    description:
-      "We create stunning, responsive websites that captivate your audience and drive results.",
-    icon: Monitor,
+    description: "We create stunning, responsive websites that captivate your audience and drive results.",
+    icon: FaDesktop,
   },
   {
     name: "Mobile Application Development",
-    description:
-      "Extend your reach with custom mobile apps that engage users on the go.",
-    icon: Smartphone,
+    description: "Extend your reach with custom mobile apps that engage users on the go.",
+    icon: FaMobileAlt,
   },
   {
     name: "UX/UI Design & Research",
-    description:
-      "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
-    icon: PenTool,
+    description: "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
+    icon: FaPencilRuler,
   },
   {
     name: "In-house Tech Team",
-    description:
-      "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
-    icon: Users,
+    description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
+    icon: FaUsers,
   },
 ];
 
@@ -78,15 +75,17 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="font-sans bg-gray-100 py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+    <div className="font-sans bg-gray-100 py-12 sm:py-16 lg:py-20 relative overflow-hidden">
+     
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-700 rounded-full opacity-10 transform translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Our Services
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            We specialize in crafting digital experiences that elevate your
-            brand.
+            We specialize in crafting digital experiences that elevate your brand.
           </p>
         </div>
 
@@ -94,21 +93,23 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.name}
-              className="bg-white overflow-hidden shadow rounded-lg hover:shadow-lg transition-all duration-500 ease-in-out transform opacity-0 translate-y-10"
+              className="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-all duration-500 ease-in-out transform opacity-0 translate-y-10 hover:-translate-y-1"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="p-6">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white mx-auto">
+              <div className="p-6 relative">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-700 rounded-bl-full opacity-10"></div>
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-700 text-white mb-4">
                   <service.icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <div className="mt-4 text-center">
-                  <h3 className="text-lg font-medium text-gray-900">
-                    {service.name}
-                  </h3>
-                  <p className="mt-2 text-base text-gray-500">
-                    {service.description}
-                  </p>
-                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  {service.name}
+                </h3>
+                <p className="text-base text-gray-500 mb-4">
+                  {service.description}
+                </p>
+                <a href="#" className="text-indigo-700 hover:text-indigo-800 font-medium flex items-center">
+                  Learn more <CiCircleChevRight className='ml-2' size={20}/>
+                </a>
               </div>
             </div>
           ))}
@@ -117,18 +118,20 @@ export default function Services() {
         <div className="mt-12 text-center">
           <a
             href="/#quick-contact"
-            className="inline-flex font-sans items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+            className="inline-flex font-sans items-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-700 hover:bg-indigo-800 transition duration-300 ease-in-out"
           >
             Get Started
+            <CiCircleChevRight className='ml-2' size={20}/>
           </a>
         </div>
       </div>
 
-      <div className="bg-gray-50">
-        <div ref={seamlessRef} className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8 opacity-0 translate-y-10 transition-all duration-1000 ease-in-out">
+      <div className="bg-white mt-20">
+        <div ref={seamlessRef} className="max-w-7xl mx-auto py-16 px-8 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8 opacity-0 translate-y-10 transition-all duration-1000 ease-in-out relative">
+          <div className="absolute top-0 left-0 w-32 h-32 bg-indigo-700 rounded-full opacity-5 transform -translate-x-1/2 -translate-y-1/2"></div>
           <div className="lg:mt-0">
             <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto lg:max-w-none">
-              <p className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
+              <p className="text-base text-indigo-700 font-semibold tracking-wide uppercase">
                 Seamless experience
               </p>
               <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -146,7 +149,7 @@ export default function Services() {
                     src={lang.image}
                     width={50}
                     height={50}
-                    alt="Proficiency Icon"
+                    alt={`${lang.name} icon`}
                     key={lang.name}
                   />
                 ))}
@@ -154,28 +157,29 @@ export default function Services() {
               <div className="mt-6">
                 <Link
                   href="/#quick-contact"
-                  className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+                  className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-700 hover:bg-indigo-800 transition duration-300 ease-in-out"
                 >
                   Start a project
                 </Link>
               </div>
             </div>
           </div>
-          <div className="mt-12 lg:mt-0 lg:ml-8">
-            <div className="relative aspect-w-5 aspect-h-3 rounded-lg overflow-hidden sm:aspect-w-3 sm:aspect-h-2">
+          <div className="mt-12 lg:mt-0 lg:ml-8 relative">
+            <div className="aspect-w-5 aspect-h-3 rounded-lg overflow-hidden sm:aspect-w-3 sm:aspect-h-2">
               <Image
                 src="/images/people-office-work-day.jpg"
                 alt="Seamless experience illustration"
-                width={800}
-                height={600}
-                className="object-cover"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg shadow-lg"
               />
-              <div className="absolute top-0 right-0 bg-black p-4 w-fit rounded-tr-md z-20 shadow-md">
+              <div className="absolute top-0 right-0 bg-black bg-opacity-90 p-4 rounded-bl-lg">
                 <p className="font-sans font-bold text-4xl text-white">40+</p>
                 <p className="font-sans font-normal text-md mt-2 text-white">Projects</p>
                 <p className="font-sans font-normal text-md text-white">completed</p>
               </div>
             </div>
+            <div className="absolute bottom-0 right-0 w-24 h-24 bg-indigo-700 rounded-full opacity-10 transform translate-x-1/2 translate-y-1/2"></div>
           </div>
         </div>
       </div>

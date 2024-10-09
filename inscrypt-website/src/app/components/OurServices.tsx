@@ -1,25 +1,28 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Monitor, Smartphone, PenTool, Users, LucideIcon } from 'lucide-react'
 import Footer from './Footer'
-
+import { CiCircleChevRight } from "react-icons/ci"
+import { IoIosDesktop } from "react-icons/io"
+import { CiMobile1 } from "react-icons/ci"
+import { BsPalette2 } from "react-icons/bs"
+import { RiTeamFill } from "react-icons/ri"
+import { IconType } from 'react-icons'
 import CTASection from './CTASection'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 interface Service {
-  name: string;
-  description: string;
-  icon: LucideIcon;
-  color: string;
-  image: string;
+  name: string
+  description: string
+  icon: IconType
+  color: string
+  gradient: string
 }
 
 interface ServiceCardProps {
-  service: Service;
-  index: number;
-  isActive: boolean;
+  service: Service
+  index: number
+  isActive: boolean
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, isActive }) => {
@@ -28,46 +31,35 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, isActive }) =
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`relative p-6 bg-white shadow-xl rounded-lg overflow-hidden mb-12 ${
+      className={`relative p-6 bg-white shadow-xl rounded-lg overflow-hidden mb-12 transition-all duration-300 ease-in-out transform hover:scale-105 ${
         isActive ? 'ring-2 ring-indigo-500' : ''
       }`}
     >
-      <div className="md:flex md:items-center">
-        <div className="md:flex-shrink-0">
-          <Image
-            className="h-48 w-full object-cover md:w-64 rounded-lg"
-            src={service.image}
-            alt={service.name}
-            width={256}
-            height={192}
-          />
+      <div className={`absolute top-0 right-0 w-32 h-32 ${service.gradient} opacity-20 rounded-bl-full`}></div>
+      <div className="relative z-10">
+        <div className={`inline-flex p-3 rounded-full ${service.color} text-white mb-4`}>
+          <service.icon className="h-8 w-8" />
         </div>
-        <div className="mt-4 md:mt-0 md:ml-6">
-          <div className={`inline-flex p-3 rounded-full ${service.color} text-white mb-4`}>
-            <service.icon className="h-6 w-6" />
-          </div>
-          <h3 className="text-2xl font-bold text-gray-900">{service.name}</h3>
-          <p className="mt-3 text-base text-gray-500">{service.description}</p>
-          <div className="mt-4">
-            <a href="#" className="inline-flex items-center text-indigo-600 hover:text-indigo-500">
-              Learn more
-              <Users className="ml-2 h-4 w-4" />
-            </a>
-          </div>
-        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.name}</h3>
+        <p className="text-base text-gray-600 mb-4">{service.description}</p>
+        <a href="#" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 transition-colors duration-200">
+          Learn more
+          <CiCircleChevRight className="ml-2 h-5 w-5" />
+        </a>
       </div>
+      <div className={`absolute bottom-0 left-0 w-full h-1 ${service.gradient}`}></div>
     </motion.div>
   )
 }
 
 interface ServicesSectionProps {
-  services: Service[];
-  activeService: number;
+  services: Service[]
+  activeService: number
 }
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({ services, activeService }) => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
       {services.map((service, index) => (
         <ServiceCard
           key={service.name}
@@ -84,30 +76,30 @@ const services: Service[] = [
   {
     name: "Website Design & Development",
     description: "We create stunning, responsive websites that captivate your audience and drive results.",
-    icon: Monitor,
-    color: "bg-blue-500",
-    image: "/images/woman-working-laptop.jpg",
+    icon: IoIosDesktop,
+    color: "bg-indigo-600",
+    gradient: "bg-gradient-to-br from-indigo-500 to-purple-600",
   },
   {
     name: "Mobile Application Development",
     description: "Extend your reach with custom mobile apps that engage users on the go.",
-    icon: Smartphone,
-    color: "bg-green-500",
-    image: "/images/mobile-app.jpg",
+    icon: CiMobile1,
+    color: "bg-blue-600",
+    gradient: "bg-gradient-to-br from-blue-500 to-teal-400",
   },
   {
     name: "UX/UI Design & Research",
     description: "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
-    icon: PenTool,
-    color: "bg-purple-500",
-    image: "/images/people-working-marketing-agency.jpg",
+    icon: BsPalette2,
+    color: "bg-pink-600",
+    gradient: "bg-gradient-to-br from-pink-500 to-red-500",
   },
   {
     name: "In-house Tech Team",
     description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
-    icon: Users,
-    color: "bg-red-500",
-    image: "/images/3836169.jpg",
+    icon: RiTeamFill,
+    color: "bg-green-600",
+    gradient: "bg-gradient-to-br from-green-500 to-teal-400",
   },
 ]
 
