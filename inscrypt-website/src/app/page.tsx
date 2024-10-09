@@ -1,9 +1,9 @@
-import Hero from "../components/Hero";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Services from "../components/Services";
-import Portfolio from "@/components/Portfolio";
-import QuickContact from "@/components/QuickContact";
+import Hero from "./components/Hero";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import Services from "./components/Services";
+import Portfolio from "@/app/components/Portfolio";
+import QuickContact from "@/app/components/QuickContact";
 
 export default function Home() {
 

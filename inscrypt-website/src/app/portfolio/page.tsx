@@ -1,7 +1,12 @@
+import Header from "@/app/components/Header";
+import Port from "@/app/components/Port";
 export default function Portfolio() {
     return (
       <div>
-        <p>Portfolio</p>
+        <div>
+        <Header/>
+        <Port/>
+      </div>
       </div>
     );
   }
