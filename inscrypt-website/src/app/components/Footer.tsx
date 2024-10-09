@@ -54,6 +54,7 @@ export default function Footer() {
                       Send a message
                     </Link>
                   </li>
+                  
                   <li>
                     <a href={`tel:${phoneNumber}`} className="text-base text-white hover:text-white">
                       Give us a call
