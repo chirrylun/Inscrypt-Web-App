@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <div className=" relative font-sans overflow-hidden">
       <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-700 rounded-full opacity-10 transform -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+     
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="mt-12 relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
           <div className="absolute inset-0">

@@ -5,52 +5,10 @@ import { IoIosDesktop } from "react-icons/io";
 import { CiMobile1 } from "react-icons/ci";
 import { BsPalette2 } from "react-icons/bs";
 import { RiTeamFill } from "react-icons/ri";
-import Image from "next/image";
 import Link from "next/link";
+import { Service } from '../types/Service';
+import { services } from '../data/services';
 import ServiceCard from './ServiceCard';
-
-const services = [
-  {
-    name: "Website Design & Development",
-    description: "We create stunning, responsive websites that captivate your audience and drive results.",
-    icon: IoIosDesktop,
-    image: "/images/website-design.jpg",
-    color: "bg-blue-500",
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "Mobile Application Development",
-    description: "Extend your reach with custom mobile apps that engage users on the go.",
-    icon: CiMobile1,
-    image: "/images/mobile-app.jpg",
-    color: "bg-green-500",
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "UX/UI Design & Research",
-    description: "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
-    icon: BsPalette2,
-    image: "/images/ux-ui-design.jpg",
-    color: "bg-purple-500",
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "In-house Tech Team",
-    description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
-    icon: RiTeamFill,
-    image: "/images/tech-team.jpg",
-    color: "bg-red-500",
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "Digital Marketing",
-    description: "Get your brand in front of your potential customers the right way with a dedicated team of experts.",
-    icon: RiTeamFill,
-    image: "/images/tech-team.jpg",
-    color: "bg-red-500",
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-];
 
 const languages = [
   { name: "Javascript", image: "/images/js_5968292.png" },
@@ -118,7 +76,7 @@ export default function Services() {
         </div>
 
         <div ref={servicesRef} className="mt-16 space-y-12">
-          {services.map((service, index) => (
+          {services.map((service : Service, index : number) => (
             <ServiceCard
               key={service.name}
               service={service}

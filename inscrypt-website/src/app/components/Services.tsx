@@ -3,45 +3,9 @@
 import { useEffect, useRef } from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { IoIosDesktop } from "react-icons/io"
-import { CiMobile1 } from "react-icons/ci"
-import { BsPalette2 } from "react-icons/bs"
-import { RiTeamFill } from "react-icons/ri"
 import { CiCircleChevRight } from "react-icons/ci"
-import { SiGooglemarketingplatform } from "react-icons/si"
-
-const services = [
-  {
-    name: "Website Design & Development",
-    description: "We create stunning, responsive websites that captivate your audience and drive results.",
-    icon: IoIosDesktop,
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "Mobile Application Development",
-    description: "Extend your reach with custom mobile apps that engage users on the go.",
-    icon: CiMobile1,
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "UX/UI Design & Research",
-    description: "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
-    icon: BsPalette2,
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "In-house Tech Team",
-    description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
-    icon: RiTeamFill,
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  },
-  {
-    name: "Digital Marketing",
-    description: "Get your brand in front of your potential customers the right way with a dedicated team of experts.",
-    icon: SiGooglemarketingplatform,
-    link: "/inscrypt-website/src/app/websitedevelopment"
-  }
-]
+import { Service } from '../types/Service'
+import { services } from '../data/services'
 
 const languages = [
   { name: "Javascript", image: "/images/js_5968292.png" },
@@ -101,7 +65,7 @@ export default function Services() {
         </div>
 
         <div ref={servicesRef} className="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
-          {services.map((service, index) => (
+        {services.map((service: Service, index: number) => (
             <div
               key={service.name}
               className={`bg-white overflow-hidden shadow-xl rounded-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform opacity-0 translate-y-10 hover:-translate-y-1 ${
