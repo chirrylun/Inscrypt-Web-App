@@ -30,6 +30,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => (
       />
       <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
       <p className="text-gray-600 mb-4">{project.description}</p>
+
+      <h2 className="text-lg font-semibold mb-4">Technologies</h2>
+      <div>
+        
+      </div>
+      
       {project.link === "#" ? (
         <p className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300">Project in Beta</p>
       ) : (

@@ -10,6 +10,7 @@ interface Service {
   image: string;
   color: string;
   icon: IconType;
+  link: string;
 }
 
 interface ServiceCardProps {
@@ -45,7 +46,7 @@ export default function ServiceCard({ service, index, isActive }: ServiceCardPro
           <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.name}</h3>
           <p className="mt-2 text-gray-600">{service.description}</p>
           <div className="mt-4">
-            <a href="#" className="inline-flex items-center text-indigo-600 hover:text-indigo-500 transition duration-300 ease-in-out">
+            <a href={service.link} className="inline-flex items-center text-indigo-600 hover:text-indigo-500 transition duration-300 ease-in-out">
               Learn more
               <FaArrowRight className="ml-2 h-4 w-4" />
             </a>

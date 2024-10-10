@@ -9,6 +9,7 @@ const projects: Project[] = [
         description: 'A consultancy agency project showcasing our expertise.',
         link: '#',
         color: 'bg-blue-500',
+        technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
       },
       {
         id: 2,
@@ -18,6 +19,7 @@ const projects: Project[] = [
         description: 'A restaurant website highlighting delicious cuisine.',
         link: '#',
         color: 'bg-green-500',
+        technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
       },
       {
         id: 3,
@@ -27,6 +29,7 @@ const projects: Project[] = [
         description: 'A luxurious hotel and resort website for vacation experiences.',
         link: '#',
         color: 'bg-indigo-500',
+        technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
       },
       {
         id: 4,
@@ -36,6 +39,7 @@ const projects: Project[] = [
         description: 'A fashion e-commerce platform for trendy clothing and accessories.',
         link: '#',
         color: 'bg-pink-500',
+        technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
       },
       {
         id: 5,
@@ -45,6 +49,7 @@ const projects: Project[] = [
         description: 'A e-commerce startup connecting sellers and buyers.',
         link: 'https://www.sweeftly.com',
         color: 'bg-pink-500',
+        technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
       },
     
   

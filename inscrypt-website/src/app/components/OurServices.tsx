@@ -17,6 +17,7 @@ interface Service {
   icon: IconType
   color: string
   gradient: string
+  link: string
 }
 
 interface ServiceCardProps {
@@ -42,7 +43,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, isActive }) =
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.name}</h3>
         <p className="text-base text-gray-600 mb-4">{service.description}</p>
-        <a href="#" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 transition-colors duration-200">
+        <a href={service.link} className="inline-flex items-center text-indigo-600 hover:text-indigo-700 transition-colors duration-200">
           Learn more
           <CiCircleChevRight className="ml-2 h-5 w-5" />
         </a>
@@ -79,6 +80,7 @@ const services: Service[] = [
     icon: IoIosDesktop,
     color: "bg-indigo-600",
     gradient: "bg-gradient-to-br from-indigo-500 to-purple-600",
+    link: "/websitedevelopment"
   },
   {
     name: "Mobile Application Development",
@@ -86,6 +88,7 @@ const services: Service[] = [
     icon: CiMobile1,
     color: "bg-blue-600",
     gradient: "bg-gradient-to-br from-blue-500 to-teal-400",
+    link: "/mobileappdevelopment"
   },
   {
     name: "UX/UI Design & Research",
@@ -93,6 +96,7 @@ const services: Service[] = [
     icon: BsPalette2,
     color: "bg-indigo-600",
     gradient: "bg-gradient-to-br from-indigo-500 to-purple-600",
+    link: "/uxuidesign&research"
   },
   {
     name: "In-house Tech Team",
@@ -100,6 +104,7 @@ const services: Service[] = [
     icon: RiTeamFill,
     color: "bg-blue-600",
     gradient: "bg-gradient-to-br from-blue-500 to-teal-400",
+    link: "/inhousetechteam"
   },
   {
     name: "Digital Marketing",
@@ -107,6 +112,7 @@ const services: Service[] = [
     icon: RiTeamFill,
     color: "bg-indigo-600",
     gradient: "bg-gradient-to-br from-indigo-500 to-purple-600",
+    link: "/digitalmarketing"
   },
 ]
 

@@ -15,26 +15,31 @@ const services = [
     name: "Website Design & Development",
     description: "We create stunning, responsive websites that captivate your audience and drive results.",
     icon: IoIosDesktop,
+    link: "/inscrypt-website/src/app/websitedevelopment"
   },
   {
     name: "Mobile Application Development",
     description: "Extend your reach with custom mobile apps that engage users on the go.",
     icon: CiMobile1,
+    link: "/inscrypt-website/src/app/websitedevelopment"
   },
   {
     name: "UX/UI Design & Research",
     description: "Our user-centric approach combines aesthetics with functionality for optimal user experiences.",
     icon: BsPalette2,
+    link: "/inscrypt-website/src/app/websitedevelopment"
   },
   {
     name: "In-house Tech Team",
     description: "Benefit from our dedicated team of experts who collaborate seamlessly to bring your project to fruition.",
     icon: RiTeamFill,
+    link: "/inscrypt-website/src/app/websitedevelopment"
   },
   {
     name: "Digital Marketing",
     description: "Get your brand in front of your potential customers the right way with a dedicated team of experts.",
     icon: SiGooglemarketingplatform,
+    link: "/inscrypt-website/src/app/websitedevelopment"
   }
 ]
 
@@ -115,7 +120,7 @@ export default function Services() {
                 <p className="text-base text-gray-500 mb-4 flex-grow">
                   {service.description}
                 </p>
-                <Link href="#" className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center transition duration-300 mt-auto">
+                <Link href={service.link} className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center transition duration-300 mt-auto">
                   Learn more <CiCircleChevRight className='ml-2' size={24}/>
                 </Link>
               </div>
