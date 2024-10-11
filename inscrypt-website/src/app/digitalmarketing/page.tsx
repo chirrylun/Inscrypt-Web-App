@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaSearchDollar, FaHashtag, FaEnvelope, FaAd, FaChartLine, FaRocket, FaUsers, FaMobileAlt } from 'react-icons/fa'
+import { FaSearchDollar, FaHashtag, FaEnvelope, FaAd, FaChartLine} from 'react-icons/fa'
 import Header from '../components/Header'
 import { LuMegaphone } from "react-icons/lu";
 import Footer from '../components/Footer'
@@ -38,7 +38,7 @@ export default function DigitalMarketing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Amplify your app's reach and engage your target audience with our comprehensive digital marketing strategies.
+              Amplify your app&apos;s reach and engage your target audience with our comprehensive digital marketing strategies.
             </motion.p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function DigitalMarketing() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="bg-indigo-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-2">Data-Driven Strategies</h3>
-              <p>We use advanced analytics to craft marketing strategies tailored to your app's unique audience and goals.</p>
+              <p>We use advanced analytics to craft marketing strategies tailored to your app&apos;s unique audience and goals.</p>
             </div>
             <div className="bg-indigo-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-2">Multi-Channel Integration</h3>
@@ -87,7 +87,7 @@ export default function DigitalMarketing() {
             </div>
             <div className="bg-indigo-800 rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-2">Brand Consistency</h3>
-              <p>Our marketing efforts align seamlessly with your app's branding and messaging for a cohesive user experience.</p>
+              <p>Our marketing efforts align seamlessly with your app&apos;s branding and messaging for a cohesive user experience.</p>
             </div>
           </div>
         </div>
@@ -97,10 +97,10 @@ export default function DigitalMarketing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Ready to Boost Your App's Success?
+              Ready to Boost Your App&apos;s Success?
             </h2>
             <p className="mt-4 text-xl text-indigo-100">
-              Let's create a tailored digital marketing strategy for your app.
+              Let&apos;s create a tailored digital marketing strategy for your app.
             </p>
             <div className="mt-8">
               <a

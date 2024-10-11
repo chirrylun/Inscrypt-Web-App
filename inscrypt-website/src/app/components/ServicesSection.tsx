@@ -1,10 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react';
-import { IoIosDesktop } from "react-icons/io";
-import { CiMobile1 } from "react-icons/ci";
-import { BsPalette2 } from "react-icons/bs";
-import { RiTeamFill } from "react-icons/ri";
 import Link from "next/link";
 import { Service } from '../types/Service';
 import { services } from '../data/services';

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Footer from "../components/Footer";
 import { Project } from "../types/Project";
-import projects from "../data/project";
+import { projects } from "../data/project";
 import ProjectCard from "../components/ProjectCard";
 import ProjectModal from "../components/ProjectModal";
 
@@ -49,7 +49,7 @@ const Portfolio: React.FC = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.map((project) => (
+          {projects.map((project: Project) => (
             <ProjectCard
               key={project.id}
               project={project}
