@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import { CiCircleChevRight } from "react-icons/ci"
 import { Service } from '../types/Service';
-import { services } from '../data/services';
+
 
 
 

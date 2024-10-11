@@ -6,13 +6,6 @@ import { Service } from '../types/Service';
 import { services } from '../data/services';
 import ServiceCard from './ServiceCard';
 
-const languages = [
-  { name: "Javascript", image: "/images/js_5968292.png" },
-  { name: "HTML", image: "/images/html-5_5968267.png" },
-  { name: "React", image: "/images/physics_753244.png" },
-  { name: "Figma", image: "/images/figma_5968705.png" },
-  { name: "Wordpress", image: "/images/social_16021409.png" },
-];
 
 export default function Services() {
   const [activeService, setActiveService] = useState(0);

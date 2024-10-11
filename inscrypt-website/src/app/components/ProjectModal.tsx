@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Project } from '../types/Project';
+import Image from 'next/image';
 
 interface ProjectModalProps {
   project: Project;
@@ -23,7 +24,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => (
       className="bg-white rounded-lg max-w-2xl w-full p-8"
       onClick={(e) => e.stopPropagation()}
     >
-      <img
+      <Image
         src={project.image}
         alt={project.title}
         className="w-full h-64 object-cover rounded-lg mb-6"
