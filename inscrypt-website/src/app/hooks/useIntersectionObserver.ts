@@ -1,15 +1,16 @@
 'use client'
+
 import { useEffect, useState, useRef, RefObject } from 'react';
 
 interface UseIntersectionObserverProps {
-  threshold?: number;
-  root?: null | HTMLElement;
+  threshold?: number | number[];
+  root?: Element | null;
   rootMargin?: string;
   triggerOnce?: boolean;
 }
 
 interface UseIntersectionObserverReturn {
-  ref: RefObject<HTMLElement>;
+  ref: RefObject<Element>;
   inView: boolean;
 }
 
@@ -19,8 +20,8 @@ export function useIntersectionObserver({
   rootMargin = '0%',
   triggerOnce = false,
 }: UseIntersectionObserverProps = {}): UseIntersectionObserverReturn {
-  const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState<boolean>(false);
+  const ref = useRef<Element>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
