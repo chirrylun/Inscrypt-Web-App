@@ -1,5 +1,4 @@
 'use client'
-import { IoIosDesktop } from "react-icons/io"
 import { CiMobile1 } from "react-icons/ci"
 
 import { RiTeamFill } from "react-icons/ri"
