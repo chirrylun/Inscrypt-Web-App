@@ -1,8 +1,12 @@
 'use client'
+import { IoIosDesktop } from "react-icons/io"
+import { CiMobile1 } from "react-icons/ci"
+
+import { RiTeamFill } from "react-icons/ri"
 
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { FaMobileAlt, FaAndroid, FaApple, FaCode, FaRocket, FaCog, FaPaintBrush, FaUsers } from 'react-icons/fa'
+import { FaAndroid, FaApple, FaCode, FaRocket, FaCog, FaPaintBrush } from 'react-icons/fa'
 import { LuMegaphone } from "react-icons/lu";
 import { CiCircleChevRight } from 'react-icons/ci'
 import Header from '../components/Header'
@@ -36,9 +40,9 @@ const services = [
 ]
 
 const process = [
-  { icon: FaMobileAlt, title: 'Ideation & Planning', description: 'We work with you to refine your app idea and create a comprehensive development plan.' },
+  { icon: CiMobile1, title: 'Ideation & Planning', description: 'We work with you to refine your app idea and create a comprehensive development plan.' },
   { icon: FaCode, title: 'Design & Development', description: 'Our team designs intuitive interfaces and develops robust, scalable app architecture.' },
-  { icon: FaUsers, title: 'Testing & Quality Assurance', description: 'Rigorous testing ensures your app is bug-free and performs optimally across all devices.' },
+  { icon: RiTeamFill, title: 'Testing & Quality Assurance', description: 'Rigorous testing ensures your app is bug-free and performs optimally across all devices.' },
   { icon: FaRocket, title: 'Launch & Marketing', description: 'We assist with app store submissions and provide strategies to maximize your visibility.' },
 ]
 
