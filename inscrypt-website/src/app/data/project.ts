@@ -51,6 +51,16 @@ export const projects: Project[] = [
         color: 'bg-pink-500',
         technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
       },
+      {
+        id: 6,
+        title: 'Tinuadebanji.com',
+        category: 'Portfolio',
+        image: '/images/tinu.png',
+        description: 'A portfolio website for the KNUST Hea of Department, Statistics.',
+        link: 'https://www.tinuadebanji.com',
+        color: 'bg-pink-500',
+        technologies: ["Ux/Ui Research", "Ux/Ui Design"] 
+      },
     
   
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../types/Project';
-import Image from 'next/image';
+
 
 interface ProjectCardProps {
   project: Project;
@@ -22,10 +22,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => (
     className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105"
     onClick={onClick}
   >
-    <Image
+    <img
       src={project.image}
       alt={project.title}
       className="w-full h-48 object-cover"
+      
     />
     <div className="p-6">
       <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
