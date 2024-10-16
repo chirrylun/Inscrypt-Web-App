@@ -152,7 +152,7 @@ export const projectData: ProjectGroup[] = [
         id: "p4_3",
         name: "Real-Time Synchronization",
         description: "Ensure that all data (inventory, orders, customer profiles) sync in real time between the app and website.",
-        cost: 400000
+        cost: 40000
       },
       {
         id: "p4_4",
