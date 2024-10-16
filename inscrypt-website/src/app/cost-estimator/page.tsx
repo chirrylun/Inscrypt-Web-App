@@ -113,7 +113,7 @@ const ProjectEstimator: React.FC = () => {
                   title: (
                     <div className="flex flex-col justify-between gap-4 w-full">
                       <span>Section name: {group.name}</span>
-                      <span className='bg-white text-gray-700 px-3 py-2 rounded-md shadow-md max-w-fit'>Section cost: {formatCurrency(groupTotals[group.id])}</span>
+                      <span className='bg-white text-gray-600 text-sm md:text-md px-3 py-2 rounded-md shadow-md max-w-fit'>Section cost: {formatCurrency(groupTotals[group.id])}</span>
                     </div>
                   ),
                   content: (
