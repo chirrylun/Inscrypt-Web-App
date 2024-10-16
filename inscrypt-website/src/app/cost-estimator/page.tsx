@@ -4,10 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { projectData } from '../data/projectData'
 import { Checkbox } from '../components/Checkbox'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/Card'
+import { IoReturnUpBackOutline } from "react-icons/io5";
+import ExportPDFButton from '../components/ExportPDFButton'
 import { Accordion } from '../components/Accordion'
 import { Progress } from '../components/Progress'
+import Link from 'next/link'
 import { Button } from '../components/Button'
-import { FaDollarSign, FaListUl, FaChartBar, FaInfoCircle, FaCheck, FaTimes } from 'react-icons/fa'
+import { FaListUl, FaChartBar, FaInfoCircle, FaCheck, FaTimes } from 'react-icons/fa'
 
 const formatCurrency = (amount: number): string => {
   return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(amount)
@@ -60,14 +63,18 @@ const ProjectEstimator: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12">
       <div className="container mx-auto px-4 max-w-6xl">
-        <motion.h1
-          className="text-6xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800"
+        <motion.div
+          className="mb-12 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Project Cost Estimator
-        </motion.h1>
+            <Link href={"/"}>
+            <IoReturnUpBackOutline size={30} color='black'/> 
+            </Link>
+            
+          
+        </motion.div>
         <motion.div
           className="mb-12 flex justify-center space-x-4"
           initial={{ opacity: 0, y: -20 }}
@@ -104,9 +111,9 @@ const ProjectEstimator: React.FC = () => {
                 items={projectData.map((group) => ({
                   id: group.id,
                   title: (
-                    <div className="flex justify-between gap-4 w-full">
-                      <span>{group.name}</span>
-                      <span>{formatCurrency(groupTotals[group.id])}</span>
+                    <div className="flex flex-col justify-between gap-4 w-full">
+                      <span>Section name: {group.name}</span>
+                      <span className='bg-white text-gray-700 px-3 py-2 rounded-md shadow-md max-w-fit'>Section cost: {formatCurrency(groupTotals[group.id])}</span>
                     </div>
                   ),
                   content: (
@@ -123,7 +130,7 @@ const ProjectEstimator: React.FC = () => {
                           </CardHeader>
                           <CardContent>
                             <div className="flex justify-between items-center mb-4">
-                              <span className="text-3xl font-bold text-blue-600">{formatCurrency(item.cost)}</span>
+                              <span className="text-3xl font-bold text-gray-700">{formatCurrency(item.cost)}</span>
                               <Button
                                 variant="outline"
                                 size="sm"
@@ -200,6 +207,12 @@ const ProjectEstimator: React.FC = () => {
             <span className="text-2xl md:text-4xl font-bold">Grand Total:</span>
             <span className="text-4xl md:text-4xl font-bold">{formatCurrency(grandTotal)}</span>
           </div>
+          {grandTotal > 0 && (
+          <div className='mt-6'>
+            <ExportPDFButton selectedItems={selectedItems} groupTotals={groupTotals} grandTotal={grandTotal} />
+          </div>
+        )}
+          <div></div>
           <div className="flex items-center justify-between">
             
             <div className="hidden items-center space-x-6">
@@ -214,6 +227,13 @@ const ProjectEstimator: React.FC = () => {
             </div>
           </div>
         </motion.div>
+
+        <div className="inline-block px-6 py-3 bg-black mt-4 rounded-full">
+            <span className="text-xl font-semibold text-white">Built by </span>
+            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+              inscrypt.tech
+            </span>
+          </div>
       </div>
     </div>
   )
