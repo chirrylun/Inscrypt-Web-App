@@ -11,7 +11,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-poppins)', 'sans-serif'],
       },
-    },
+    }
+    
   },
   plugins: [],
 };
