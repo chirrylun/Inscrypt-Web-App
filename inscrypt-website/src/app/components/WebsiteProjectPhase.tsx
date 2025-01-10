@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Badge } from "./ui/Badge";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/Card";
-import { CheckCircle, Clock, Circle, ChevronDown } from 'lucide-react';
+import { CheckCircle, Circle, ChevronDown } from 'lucide-react';
 
 export interface WebsiteDeliverable {
   name: string;
