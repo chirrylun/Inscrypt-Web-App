@@ -28,11 +28,7 @@ const ProjectPhase: React.FC<ProjectPhaseProps> = ({ phase, duration, deliverabl
   const completedDeliverables = deliverables.filter(d => d.status === 'completed').length;
   const progressPercentage = (completedDeliverables / deliverables.length) * 100;
 
-  const statusIcons = {
-    completed: <CheckCircle className="text-green-500" size={20} />,
-    'in-progress': <Clock className="text-yellow-500" size={20} />,
-    'not-started': <Circle className="text-gray-400" size={20} />
-  };
+  
 
   return (
     <Card className="mb-8 overflow-hidden bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
