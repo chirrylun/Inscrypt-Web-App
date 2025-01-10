@@ -115,7 +115,7 @@ const WebsiteBuildProgress: React.FC = () => {
             size={27}
           />
           <h1 className="text-2xl lg:text-4xl font-bold  text-center text-gray-800 dark:text-gray-100">
-            Greenfield Core Website Development Progress
+            Greenfield Core Website Build Progress
           </h1></div>
         
           {projectData.map((phase, index) => (
