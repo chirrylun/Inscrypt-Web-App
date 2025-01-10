@@ -76,7 +76,7 @@ const ProjectPhase: React.FC<ProjectPhaseProps> = ({ phase, duration, deliverabl
                   className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
                 >
                   <span className="flex items-center space-x-2 text-gray-700 text-xs dark:text-gray-200">
-                    {statusIcons[deliverable.status]}
+                    
                     <span>{deliverable.name}</span>
                   </span>
                   <Badge

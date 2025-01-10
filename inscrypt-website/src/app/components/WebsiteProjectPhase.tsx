@@ -81,7 +81,7 @@ export const WebsiteProjectPhase: React.FC<WebsiteProjectPhaseProps> = ({
                   className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
                 >
                   <span className="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-200">
-                    {statusIcons[deliverable.status]}
+                   
                     <span>{deliverable.name}</span>
                   </span>
                   <Badge
