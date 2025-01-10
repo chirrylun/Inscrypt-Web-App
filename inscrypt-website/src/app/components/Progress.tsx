@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ProjectPhase, { ProjectPhaseProps } from '../components/ProjectPhase';
+import { PanelsTopLeft } from 'lucide-react';
 
 const ProjectProgress: React.FC = () => {
   const projectData: ProjectPhaseProps[] = [
@@ -88,9 +89,13 @@ const ProjectProgress: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">
+       <div className="flex flex-row items-center mb-8 gap-4"><PanelsTopLeft
+           color="black"
+            size={27}
+          />
+          <h1 className="text-4xl font-bold  text-center text-gray-800 dark:text-gray-100">
           Website Frontend Content Build Progress
-        </h1>
+          </h1></div>
         {projectData.map((phase, index) => (
           <ProjectPhase key={index} {...phase} />
         ))}
