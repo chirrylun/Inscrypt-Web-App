@@ -80,7 +80,7 @@ export const WebsiteProjectPhase: React.FC<WebsiteProjectPhaseProps> = ({
                   key={index}
                   className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
                 >
-                  <span className="flex items-center space-x-2 text-gray-700 dark:text-gray-200">
+                  <span className="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-200">
                     {statusIcons[deliverable.status]}
                     <span>{deliverable.name}</span>
                   </span>
@@ -102,7 +102,7 @@ export const WebsiteProjectPhase: React.FC<WebsiteProjectPhaseProps> = ({
                   key={index}
                   className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
                 >
-                  <span className="flex items-center space-x-4 text-gray-700 dark:text-gray-200">
+                  <span className="flex items-center text-sm space-x-4 text-gray-700 dark:text-gray-200">
                     {requirement.submitted ? (
                       <CheckCircle className="text-green-500" size={20} />
                     ) : (

@@ -75,7 +75,7 @@ const ProjectPhase: React.FC<ProjectPhaseProps> = ({ phase, duration, deliverabl
                   key={index}
                   className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
                 >
-                  <span className="flex items-center space-x-2 text-gray-700 dark:text-gray-200">
+                  <span className="flex items-center space-x-2 text-gray-700 text-xs dark:text-gray-200">
                     {statusIcons[deliverable.status]}
                     <span>{deliverable.name}</span>
                   </span>
@@ -95,9 +95,9 @@ const ProjectPhase: React.FC<ProjectPhaseProps> = ({ phase, duration, deliverabl
               {requirements.map((requirement, index) => (
                 <li
                   key={index}
-                  className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
+                  className="flex items-center justify-between text-sm bg-gray-50 dark:bg-gray-700 p-3 rounded-lg"
                 >
-                  <span className="flex items-center space-x-4 text-gray-700 dark:text-gray-200">
+                  <span className="flex items-center space-x-4  text-gray-700 dark:text-gray-200">
                     {requirement.submitted ? (
                       <CheckCircle className="text-green-500" size={20} />
                     ) : (
