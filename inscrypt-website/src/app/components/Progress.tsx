@@ -94,7 +94,7 @@ const ProjectProgress: React.FC = () => {
             size={27}
           />
           <h1 className="text-2xl lg:text-4xl font-bold  text-center text-gray-800 dark:text-gray-100">
-          Website Frontend Content Build Progress
+          Greenfield Website Content Build Progress
           </h1></div>
         {projectData.map((phase, index) => (
           <ProjectPhase key={index} {...phase} />
