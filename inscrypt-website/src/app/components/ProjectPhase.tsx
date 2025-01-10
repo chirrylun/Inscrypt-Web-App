@@ -63,7 +63,7 @@ const ProjectPhase: React.FC<ProjectPhaseProps> = ({ phase, duration, deliverabl
       </div>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+          isExpanded ? 'max-h-[1500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <CardContent className="pt-4">
