@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useAnimation, AnimationControls } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { CiCircleChevRight } from "react-icons/ci"
-import { IconType } from "react-icons";
+import { IconType } from "react-icons"
 import { FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa'
 import { Service } from '../types/Service'
 import { services } from '../data/services'
@@ -35,7 +35,7 @@ export default function Services() {
   const servicesRef = useRef<HTMLDivElement>(null)
   const seamlessRef = useRef<HTMLDivElement>(null)
   const creativeContentRef = useRef<HTMLDivElement>(null)
-  const controls: AnimationControls = useAnimation()
+  const controls = useAnimation()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
