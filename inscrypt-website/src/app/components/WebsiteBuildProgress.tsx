@@ -114,7 +114,7 @@ const WebsiteBuildProgress: React.FC = () => {
            color="black"
             size={27}
           />
-          <h1 className="text-4xl sm:text-2xl font-bold  text-center text-gray-800 dark:text-gray-100">
+          <h1 className="text-2xl lg:text-4xl font-bold  text-center text-gray-800 dark:text-gray-100">
             Core Website Development Progress
           </h1></div>
         
